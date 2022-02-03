@@ -1,0 +1,62 @@
+{
+	// See https://go.microsoft.com/fwlink/?LinkId=733558
+	// for the documentation about the tasks.json format
+	"version": "2.0.0",
+	"tasks": [
+		/* Requires cmake to be initially configured in mistlib/debug. For example:
+		 * 		
+		 * 		make build
+		 *		cd build
+		 * 		cmake ../ -G Ninja
+		 */
+		{
+			"label": "config-debug",
+			"type": "shell",
+			"command": "cmake ../ -DCMAKE_BUILD_TYPE=DEBUG",
+			"options": {
+				"cwd": "build",
+			},
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "config-release",
+			"type": "shell",
+			"command": "cmake ../ -DCMAKE_BUILD_TYPE=RELEASE",
+			"options": {
+				"cwd": "build",
+			},
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "build-debug",
+			"dependsOn": [
+				"config-debug",
+			],
+			"type": "shell",
+			"command": "cmake --build .",
+			"options": {
+				"cwd": "build",
+			},
+			"problemMatcher": [],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"label": "build-release",
+			"dependsOn": [
+				"config-release",
+			],
+			"type": "shell",
+			"command": "cmake --build .",
+			"options": {
+				"cwd": "build",
+			},
+			"problemMatcher": [],
+			"group": "build",
+		}
+	]
+}
