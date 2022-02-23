@@ -3,8 +3,8 @@
 	// for the documentation about the tasks.json format
 	"version": "2.0.0",
 	"tasks": [
-		/* Requires cmake to be initially configured in mistlib/debug. For example:
-		 * 		
+		/* Requires cmake to be initially configured in tharness/tests/build. For example:
+		 *
 		 * 		make build
 		 *		cd build
 		 * 		cmake ../ -G Ninja
@@ -14,7 +14,7 @@
 			"type": "shell",
 			"command": "cmake ../ -DCMAKE_BUILD_TYPE=DEBUG",
 			"options": {
-				"cwd": "build",
+				"cwd": "tests/build",
 			},
 			"problemMatcher": [],
 			"group": "none"
@@ -24,20 +24,20 @@
 			"type": "shell",
 			"command": "cmake ../ -DCMAKE_BUILD_TYPE=RELEASE",
 			"options": {
-				"cwd": "build",
+				"cwd": "tests/build",
 			},
 			"problemMatcher": [],
 			"group": "none"
 		},
 		{
 			"label": "build-debug",
+			"type": "shell",
 			"dependsOn": [
 				"config-debug",
 			],
-			"type": "shell",
 			"command": "cmake --build .",
 			"options": {
-				"cwd": "build",
+				"cwd": "tests/build",
 			},
 			"problemMatcher": [],
 			"group": {
@@ -53,7 +53,7 @@
 			"type": "shell",
 			"command": "cmake --build .",
 			"options": {
-				"cwd": "build",
+				"cwd": "tests/build",
 			},
 			"problemMatcher": [],
 			"group": "build",

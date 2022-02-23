@@ -10,10 +10,10 @@
 			"request": "launch",
 			"preLaunchTask": "build-debug",
 			"windows": {
-				"program": "${workspaceFolder}/build/tests/run-tharness-tests.exe",
+				"program": "${workspaceFolder}\\tests\\build\\run-tharness-tests.exe",
 			},
 			"osx": {
-				"program": "${workspaceRoot}/build/tests/run-tharness-tests",
+				"program": "${workspaceRoot}/tests/build/run-tharness-tests",
 			},
 			"args": [],
 			"stopAtEntry": false,
